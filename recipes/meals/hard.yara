@@ -14,7 +14,7 @@ rule Orange_Chicken {
 
         $sweetener1 = "sugar" nocase
         $sweetener2 = "honey" nocase
-        $sweetner3 = "brown sugar" nocase
+        $sweetener3 = "brown sugar" nocase
 
         $seasoning1 = "salt" nocase
         $seasoning2 = "pepper" nocase
@@ -27,7 +27,9 @@ rule Orange_Chicken {
         $optional7 = "long grain rice" nocase
 
     condition:
-        all of ($sauce*) 
+        all of ($base*)
+        and all of ($sauce*) 
         and all of ($sweetener*) 
         and all of ($seasoning*)
+        and any of ($optional*)
 }
